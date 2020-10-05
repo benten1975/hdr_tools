@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
+import de.ssc.brackets.search.SearchForBracketingRows;
 import de.ssc.brackets.settings.BS_CLConstants;
 
 public class BracketingSearchCLStart {
@@ -20,13 +21,15 @@ public class BracketingSearchCLStart {
 				Properties confProperties = new Properties();
 				confProperties.load(new FileInputStream(file));
 				initProperties(confProperties);
+				
+				SearchForBracketingRows search = new SearchForBracketingRows();
+				search.scannFolder(args[0]);
 			}
 		}
 		catch (Exception e) {
 			if(Logger.getRootLogger().getLevel().toString().equals("DEBUG")) e.printStackTrace();
 			logger.error(e);
 		}
-
 	}
 
 	private static void initProperties(Properties property) {

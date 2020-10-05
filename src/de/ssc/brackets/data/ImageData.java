@@ -8,57 +8,47 @@ import org.apache.log4j.Logger;
 
 import de.ssc.brackets.settings.BS_CLConstants;
 
-public class ImageData
-{
+public class ImageData {
 	private static Logger logger = Logger.getLogger(ImageData.class);
 	private File imageFile = null;
 	private String exp = "";
 	private Path copySourcePath = null;
 	private String expDouble = "";
 	
-	public ImageData(File imageFile)
-	{
+	public ImageData(File imageFile) 	{
 		this.imageFile = imageFile;
 		this.setCopySourcePath(Paths.get(BS_CLConstants.actualPath+imageFile.getName()));
 	}
 
-	public File getImageFile()
-	{
+	public File getImageFile() 	{
 		return imageFile;
 	}
 
-	public void setImageFile(File imageFile)
-	{
+	public void setImageFile(File imageFile) {
 		this.imageFile = imageFile;
 	}
 
-	public String getExp()
-	{
+	public String getExp() {
 		return exp;
 	}
 
-	public void setExp(String exp)
-	{
+	public void setExp(String exp) {
 		this.exp = exp;
 	}
 
-	public Path getCopySourcePath()
-	{
+	public Path getCopySourcePath() {
 		return copySourcePath;
 	}
 
-	public void setCopySourcePath(Path copySourcePath)
-	{
+	public void setCopySourcePath(Path copySourcePath) {
 		this.copySourcePath = copySourcePath;
 	}
 
-	public String getExpDouble()
-	{
+	public String getExpDouble() {
 		return expDouble;
 	}
 
-	public void setExpDouble(String expDouble)
-	{
+	public void setExpDouble(String expDouble) {
 		this.expDouble = expDouble;
 	}
 }
